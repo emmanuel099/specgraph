@@ -181,7 +181,7 @@ def main(inputfile, outputfile):
     # transactions
     init_conf = out['init_conf']
     final_conf = out['final_conf']
-    transaction_colors = ['#00934a', '#4363d8', '#f58231', '#fabebe', '#e6beff', '#800000', '#000075']
+    transaction_colors = ['#004c6d', '#006285', '#007a9d', '#0092b4', '#00abc9', '#00c4dd', '#00dfef', '#00f9ff']
     for tid in range(init_conf['i'], final_conf['i']):
         for entry in trace:
             if not tid in entry['running_transactions']:
