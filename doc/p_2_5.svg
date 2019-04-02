@@ -103,8 +103,8 @@
 <!-- 3&#45;&gt;4 -->
 <g id="edge31" class="edge">
 <title>3&#45;&gt;4</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M507.6968,-1003.9949C512.7914,-998.7962 517.4818,-992.6961 520.2554,-986 530.4603,-961.3632 535.5891,-947.8172 520.2554,-926 513.7303,-916.7158 490.3904,-908.0425 467.9,-901.5364"/>
-<text text-anchor="middle" x="539.7554" y="-952.3" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M507.6968,-1003.9949C512.7914,-998.7962 517.4818,-992.6961 520.2554,-986 530.4603,-961.3632 535.5891,-947.8172 520.2554,-926 513.7303,-916.7158 490.3904,-908.0425 467.9,-901.5364"/>
+<text text-anchor="middle" x="539.7554" y="-952.3" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 6 -->
 <g id="node6" class="node">
@@ -142,8 +142,8 @@
 <!-- 4&#45;&gt;5 -->
 <g id="edge32" class="edge">
 <title>4&#45;&gt;5</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M467.8167,-878.6796C490.6996,-872.1731 514.604,-863.4321 521.2554,-854 532.7815,-837.6553 533.0576,-825.1465 521.2554,-809 512.4771,-796.9902 477.606,-787.0685 448.8953,-780.704"/>
-<text text-anchor="middle" x="539.7554" y="-827.8" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M467.8167,-878.6796C490.6996,-872.1731 514.604,-863.4321 521.2554,-854 532.7815,-837.6553 533.0576,-825.1465 521.2554,-809 512.4771,-796.9902 477.606,-787.0685 448.8953,-780.704"/>
+<text text-anchor="middle" x="539.7554" y="-827.8" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 7 -->
 <g id="node8" class="node">
@@ -184,14 +184,14 @@
 <!-- 5&#45;&gt;7 -->
 <g id="edge33" class="edge">
 <title>5&#45;&gt;7</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M406.966,-754.6921C404.9352,-737.1601 399.7079,-710.6848 386.2554,-692 381.2521,-685.0506 374.4602,-679.0545 367.3827,-674.0582"/>
-<text text-anchor="middle" x="413.7554" y="-710.8" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M406.966,-754.6921C404.9352,-737.1601 399.7079,-710.6848 386.2554,-692 381.2521,-685.0506 374.4602,-679.0545 367.3827,-674.0582"/>
+<text text-anchor="middle" x="413.7554" y="-710.8" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 5&#45;&gt;7 -->
 <g id="edge38" class="edge">
 <title>5&#45;&gt;7</title>
-<path fill="none" stroke="#4363d8" stroke-width="3" stroke-dasharray="5,2" d="M420.1774,-754.7341C429.9456,-737.2332 440.2222,-710.7803 427.2554,-692 422.0444,-684.4527 405.3887,-677.0961 387.447,-671.021"/>
-<text text-anchor="middle" x="443.7554" y="-710.8" font-family="Times,serif" font-size="14.00" fill="#4363d8"> t1</text>
+<path fill="none" stroke="#006285" stroke-width="3" stroke-dasharray="5,2" d="M420.1774,-754.7341C429.9456,-737.2332 440.2222,-710.7803 427.2554,-692 422.0444,-684.4527 405.3887,-677.0961 387.447,-671.021"/>
+<text text-anchor="middle" x="443.7554" y="-710.8" font-family="Times,serif" font-size="14.00" fill="#006285"> t1</text>
 </g>
 <!-- 8 -->
 <g id="node9" class="node">
@@ -228,26 +228,26 @@
 <!-- 7&#45;&gt;8 -->
 <g id="edge34" class="edge">
 <title>7&#45;&gt;8</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M332.2554,-637.9227C332.2554,-612.7862 332.2554,-567.5281 332.2554,-542.2825"/>
-<text text-anchor="middle" x="341.7554" y="-586.3" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M332.2554,-637.9227C332.2554,-612.7862 332.2554,-567.5281 332.2554,-542.2825"/>
+<text text-anchor="middle" x="341.7554" y="-586.3" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 7&#45;&gt;8 -->
 <g id="edge39" class="edge">
 <title>7&#45;&gt;8</title>
-<path fill="none" stroke="#4363d8" stroke-width="3" stroke-dasharray="5,2" d="M344.7513,-637.7062C347.8207,-632.2478 350.6772,-626.0906 352.2554,-620 358.9445,-594.1859 358.9445,-585.8141 352.2554,-560 350.6772,-553.9094 347.8207,-547.7522 344.7513,-542.2938"/>
-<text text-anchor="middle" x="367.7554" y="-586.3" font-family="Times,serif" font-size="14.00" fill="#4363d8"> t1</text>
+<path fill="none" stroke="#006285" stroke-width="3" stroke-dasharray="5,2" d="M344.7513,-637.7062C347.8207,-632.2478 350.6772,-626.0906 352.2554,-620 358.9445,-594.1859 358.9445,-585.8141 352.2554,-560 350.6772,-553.9094 347.8207,-547.7522 344.7513,-542.2938"/>
+<text text-anchor="middle" x="367.7554" y="-586.3" font-family="Times,serif" font-size="14.00" fill="#006285"> t1</text>
 </g>
 <!-- 7&#45;&gt;8 -->
 <g id="edge40" class="edge">
 <title>7&#45;&gt;8</title>
-<path fill="none" stroke="#f58231" stroke-width="3" stroke-dasharray="5,2" d="M365.9903,-637.8529C372.145,-632.9178 377.7276,-626.9695 381.2554,-620 393.2987,-596.2077 393.2987,-583.7923 381.2554,-560 377.7276,-553.0305 372.145,-547.0822 365.9903,-542.1471"/>
-<text text-anchor="middle" x="400.7554" y="-586.3" font-family="Times,serif" font-size="14.00" fill="#f58231"> t2</text>
+<path fill="none" stroke="#007a9d" stroke-width="3" stroke-dasharray="5,2" d="M365.9903,-637.8529C372.145,-632.9178 377.7276,-626.9695 381.2554,-620 393.2987,-596.2077 393.2987,-583.7923 381.2554,-560 377.7276,-553.0305 372.145,-547.0822 365.9903,-542.1471"/>
+<text text-anchor="middle" x="400.7554" y="-586.3" font-family="Times,serif" font-size="14.00" fill="#007a9d"> t2</text>
 </g>
 <!-- 7&#45;&gt;8 -->
 <g id="edge44" class="edge">
 <title>7&#45;&gt;8</title>
-<path fill="none" stroke="#e6beff" stroke-width="3" stroke-dasharray="5,2" d="M387.2823,-642.3078C397.9422,-637.0851 407.7942,-629.8932 414.2554,-620 428.8371,-597.6732 428.8371,-582.3268 414.2554,-560 407.1991,-549.1956 396.0986,-541.613 384.3183,-536.2987"/>
-<text text-anchor="middle" x="434.7554" y="-586.3" font-family="Times,serif" font-size="14.00" fill="#e6beff"> t4</text>
+<path fill="none" stroke="#00abc9" stroke-width="3" stroke-dasharray="5,2" d="M387.2823,-642.3078C397.9422,-637.0851 407.7942,-629.8932 414.2554,-620 428.8371,-597.6732 428.8371,-582.3268 414.2554,-560 407.1991,-549.1956 396.0986,-541.613 384.3183,-536.2987"/>
+<text text-anchor="middle" x="434.7554" y="-586.3" font-family="Times,serif" font-size="14.00" fill="#00abc9"> t4</text>
 </g>
 <!-- 10 -->
 <g id="node10" class="node">
@@ -295,20 +295,20 @@
 <!-- 8&#45;&gt;9 -->
 <g id="edge35" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M359.0781,-505.6448C364.4192,-500.5995 369.2907,-494.657 372.2554,-488 383.504,-462.7428 376.0983,-430.1634 369.4119,-410.1928"/>
-<text text-anchor="middle" x="387.7554" y="-454.3" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M359.0781,-505.6448C364.4192,-500.5995 369.2907,-494.657 372.2554,-488 383.504,-462.7428 376.0983,-430.1634 369.4119,-410.1928"/>
+<text text-anchor="middle" x="387.7554" y="-454.3" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 8&#45;&gt;9 -->
 <g id="edge41" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="#f58231" stroke-width="3" stroke-dasharray="5,2" d="M383.2518,-505.8797C390.4233,-501.1561 396.8428,-495.2793 401.2554,-488 415.0789,-465.196 411.9507,-452.4279 401.2554,-428 398.2989,-421.2473 393.3816,-415.1994 388.0177,-410.0753"/>
-<text text-anchor="middle" x="420.7554" y="-454.3" font-family="Times,serif" font-size="14.00" fill="#f58231"> t2</text>
+<path fill="none" stroke="#007a9d" stroke-width="3" stroke-dasharray="5,2" d="M383.2518,-505.8797C390.4233,-501.1561 396.8428,-495.2793 401.2554,-488 415.0789,-465.196 411.9507,-452.4279 401.2554,-428 398.2989,-421.2473 393.3816,-415.1994 388.0177,-410.0753"/>
+<text text-anchor="middle" x="420.7554" y="-454.3" font-family="Times,serif" font-size="14.00" fill="#007a9d"> t2</text>
 </g>
 <!-- 8&#45;&gt;9 -->
 <g id="edge45" class="edge">
 <title>8&#45;&gt;9</title>
-<path fill="none" stroke="#e6beff" stroke-width="3" stroke-dasharray="5,2" d="M384.4819,-511.5355C406.2461,-505.1874 427.9375,-496.9297 434.2554,-488 449.6574,-466.2309 448.2749,-450.684 434.2554,-428 428.0102,-417.895 417.9746,-410.5316 407.3541,-405.2031"/>
-<text text-anchor="middle" x="455.7554" y="-454.3" font-family="Times,serif" font-size="14.00" fill="#e6beff"> t4</text>
+<path fill="none" stroke="#00abc9" stroke-width="3" stroke-dasharray="5,2" d="M384.4819,-511.5355C406.2461,-505.1874 427.9375,-496.9297 434.2554,-488 449.6574,-466.2309 448.2749,-450.684 434.2554,-428 428.0102,-417.895 417.9746,-410.5316 407.3541,-405.2031"/>
+<text text-anchor="middle" x="455.7554" y="-454.3" font-family="Times,serif" font-size="14.00" fill="#00abc9"> t4</text>
 </g>
 <!-- 10&#45;&gt;6 -->
 <g id="edge24" class="edge">
@@ -368,32 +368,32 @@
 <!-- 9&#45;&gt;11 -->
 <g id="edge36" class="edge">
 <title>9&#45;&gt;11</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M349.8059,-373.6941C346.7372,-368.2355 343.8695,-362.0812 342.2554,-356 336.7281,-335.1744 337.1801,-310.4562 338.5891,-293.0591"/>
-<text text-anchor="middle" x="351.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M349.8059,-373.6941C346.7372,-368.2355 343.8695,-362.0812 342.2554,-356 336.7281,-335.1744 337.1801,-310.4562 338.5891,-293.0591"/>
+<text text-anchor="middle" x="351.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 9&#45;&gt;11 -->
 <g id="edge42" class="edge">
 <title>9&#45;&gt;11</title>
-<path fill="none" stroke="#f58231" stroke-width="3" stroke-dasharray="5,2" d="M364.3375,-373.6941C365.6862,-357.0842 366.3614,-332.0474 361.2554,-311 359.7911,-304.9638 357.2888,-298.794 354.5404,-293.1635"/>
-<text text-anchor="middle" x="375.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#f58231"> t2</text>
+<path fill="none" stroke="#007a9d" stroke-width="3" stroke-dasharray="5,2" d="M364.3375,-373.6941C365.6862,-357.0842 366.3614,-332.0474 361.2554,-311 359.7911,-304.9638 357.2888,-298.794 354.5404,-293.1635"/>
+<text text-anchor="middle" x="375.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#007a9d"> t2</text>
 </g>
 <!-- 9&#45;&gt;11 -->
 <g id="edge43" class="edge">
 <title>9&#45;&gt;11</title>
-<path fill="none" stroke="#fabebe" stroke-width="3" stroke-dasharray="5,2" d="M379.3507,-373.8909C383.3866,-368.5282 387.1308,-362.374 389.2554,-356 395.58,-337.0263 397.7386,-329.1118 389.2554,-311 385.0225,-301.9624 377.6327,-294.2546 369.9018,-288.088"/>
-<text text-anchor="middle" x="404.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#fabebe"> t3</text>
+<path fill="none" stroke="#0092b4" stroke-width="3" stroke-dasharray="5,2" d="M379.3507,-373.8909C383.3866,-368.5282 387.1308,-362.374 389.2554,-356 395.58,-337.0263 397.7386,-329.1118 389.2554,-311 385.0225,-301.9624 377.6327,-294.2546 369.9018,-288.088"/>
+<text text-anchor="middle" x="404.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#0092b4"> t3</text>
 </g>
 <!-- 9&#45;&gt;11 -->
 <g id="edge46" class="edge">
 <title>9&#45;&gt;11</title>
-<path fill="none" stroke="#e6beff" stroke-width="3" stroke-dasharray="5,2" d="M401.8445,-373.8489C408.4349,-369.0105 414.3786,-363.1011 418.2554,-356 427.8392,-338.4458 428.6382,-328.0938 418.2554,-311 410.2004,-297.7385 396.1624,-288.6732 382.2597,-282.5741"/>
-<text text-anchor="middle" x="435.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#e6beff"> t4</text>
+<path fill="none" stroke="#00abc9" stroke-width="3" stroke-dasharray="5,2" d="M401.8445,-373.8489C408.4349,-369.0105 414.3786,-363.1011 418.2554,-356 427.8392,-338.4458 428.6382,-328.0938 418.2554,-311 410.2004,-297.7385 396.1624,-288.6732 382.2597,-282.5741"/>
+<text text-anchor="middle" x="435.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#00abc9"> t4</text>
 </g>
 <!-- 9&#45;&gt;11 -->
 <g id="edge47" class="edge">
 <title>9&#45;&gt;11</title>
-<path fill="none" stroke="#800000" stroke-width="3" stroke-dasharray="5,2" d="M407.3985,-384.0941C423.3676,-378.8894 439.7174,-370.2692 449.2554,-356 460.3698,-339.3726 460.6807,-327.4153 449.2554,-311 441.4312,-299.7585 411.051,-289.0932 384.4975,-281.6069"/>
-<text text-anchor="middle" x="467.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#800000"> t5</text>
+<path fill="none" stroke="#00c4dd" stroke-width="3" stroke-dasharray="5,2" d="M407.3985,-384.0941C423.3676,-378.8894 439.7174,-370.2692 449.2554,-356 460.3698,-339.3726 460.6807,-327.4153 449.2554,-311 441.4312,-299.7585 411.051,-289.0932 384.4975,-281.6069"/>
+<text text-anchor="middle" x="467.7554" y="-329.8" font-family="Times,serif" font-size="14.00" fill="#00c4dd"> t5</text>
 </g>
 <!-- 11&#45;&gt;10 -->
 <g id="edge23" class="edge">
@@ -418,8 +418,8 @@
 <!-- 11&#45;&gt;10 -->
 <g id="edge37" class="edge">
 <title>11&#45;&gt;10</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M296.8938,-266.8046C251.5998,-261.4952 185.7905,-250.5884 170.2554,-231 153.6853,-210.1065 158.098,-194.7341 170.2554,-171 173.8641,-163.9551 179.5644,-157.9749 185.8455,-153.0327"/>
-<text text-anchor="middle" x="179.7554" y="-197.3" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M296.8938,-266.8046C251.5998,-261.4952 185.7905,-250.5884 170.2554,-231 153.6853,-210.1065 158.098,-194.7341 170.2554,-171 173.8641,-163.9551 179.5644,-157.9749 185.8455,-153.0327"/>
+<text text-anchor="middle" x="179.7554" y="-197.3" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 </g>
 </svg>

@@ -143,8 +143,8 @@
 <!-- 5&#45;&gt;6 -->
 <g id="edge21" class="edge">
 <title>5&#45;&gt;6</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M126.9414,-475.9949C132.036,-470.7962 136.7264,-464.6961 139.5,-458 149.7049,-433.3632 154.6126,-419.9709 139.5,-398 133.4835,-389.2532 112.0041,-380.6999 91.0947,-374.1266"/>
-<text text-anchor="middle" x="159" y="-424.3" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M126.9414,-475.9949C132.036,-470.7962 136.7264,-464.6961 139.5,-458 149.7049,-433.3632 154.6126,-419.9709 139.5,-398 133.4835,-389.2532 112.0041,-380.6999 91.0947,-374.1266"/>
+<text text-anchor="middle" x="159" y="-424.3" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 8 -->
 <g id="node8" class="node">
@@ -180,8 +180,8 @@
 <!-- 6&#45;&gt;7 -->
 <g id="edge22" class="edge">
 <title>6&#45;&gt;7</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M60.7178,-343.638C64.3053,-338.2742 67.628,-332.1828 69.5,-326 72.9028,-314.7612 67.8421,-302.8527 61.5047,-293.3718"/>
-<text text-anchor="middle" x="81" y="-314.8" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M60.7178,-343.638C64.3053,-338.2742 67.628,-332.1828 69.5,-326 72.9028,-314.7612 67.8421,-302.8527 61.5047,-293.3718"/>
+<text text-anchor="middle" x="81" y="-314.8" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 9 -->
 <g id="node10" class="node">
@@ -221,14 +221,14 @@
 <!-- 7&#45;&gt;9 -->
 <g id="edge23" class="edge">
 <title>7&#45;&gt;9</title>
-<path fill="none" stroke="#00934a" stroke-width="3" stroke-dasharray="5,2" d="M79.1204,-256.9809C86.0296,-251.9529 92.6617,-245.9335 97.5,-239 110.5846,-220.2492 115.8888,-194.2896 118.038,-176.0065"/>
-<text text-anchor="middle" x="125" y="-212.8" font-family="Times,serif" font-size="14.00" fill="#00934a"> t0</text>
+<path fill="none" stroke="#004c6d" stroke-width="3" stroke-dasharray="5,2" d="M79.1204,-256.9809C86.0296,-251.9529 92.6617,-245.9335 97.5,-239 110.5846,-220.2492 115.8888,-194.2896 118.038,-176.0065"/>
+<text text-anchor="middle" x="125" y="-212.8" font-family="Times,serif" font-size="14.00" fill="#004c6d"> t0</text>
 </g>
 <!-- 7&#45;&gt;9 -->
 <g id="edge24" class="edge">
 <title>7&#45;&gt;9</title>
-<path fill="none" stroke="#4363d8" stroke-width="3" stroke-dasharray="5,2" d="M86.034,-264.2462C108.0721,-257.4921 132.1145,-248.3191 138.5,-239 151.3207,-220.2894 142.594,-194.3228 133.1692,-176.0272"/>
-<text text-anchor="middle" x="155" y="-212.8" font-family="Times,serif" font-size="14.00" fill="#4363d8"> t1</text>
+<path fill="none" stroke="#006285" stroke-width="3" stroke-dasharray="5,2" d="M86.034,-264.2462C108.0721,-257.4921 132.1145,-248.3191 138.5,-239 151.3207,-220.2894 142.594,-194.3228 133.1692,-176.0272"/>
+<text text-anchor="middle" x="155" y="-212.8" font-family="Times,serif" font-size="14.00" fill="#006285"> t1</text>
 </g>
 <!-- 9&#45;&gt;8 -->
 <g id="edge19" class="edge">
