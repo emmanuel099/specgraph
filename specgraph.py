@@ -169,7 +169,7 @@ def main(inputfile, outputfile):
     trace = out['trace']
     for entry in trace:
         graph.edge(str(entry['from']), str(entry['to']), color='#f60000', fontcolor='#f60000', penwidth='3.5',
-                   label='@{}\n{}'.format(entry['t'], '\n'.join(entry['obs'])))
+                   label='@{}\n{}'.format(entry['t'], '\n'.join([o for o in entry['obs'] if not o.startswith('#')])))
 
     # transactions
     init_conf = out['init_conf']
