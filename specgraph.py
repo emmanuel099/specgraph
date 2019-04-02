@@ -51,7 +51,7 @@ def parse_trace(trace, program):
     running_transactions = set()
 
     for label, obs_str in zip(trace_parts[:-1:2], trace_parts[1::2]):
-        obs = obs_str.split('\n')
+        obs = [o.strip() for o in obs_str.split('\n')]
         label = int(label)
 
         targets = program[label]['targets']
@@ -91,7 +91,7 @@ def parse(src):
     src = src.replace('\\/', '∨')
     src = src.replace('/\\', '∧')
 
-    regex = r"program:\n(?P<program>.*).*Assignments:\n\[(?P<assignments>.*)\].*initial conf:\n(?P<init_conf>.*).*trace:\n(?P<trace>.*).*final conf:\n(?P<final_conf>.*)"
+    regex = r"program:\n(?P<program>.*).*Assignments:\n\s*\[(?P<assignments>.*)\].*initial conf:\n(?P<init_conf>.*).*trace:\n(?P<trace>.*).*final conf:\n(?P<final_conf>.*)"
     match = re.search(regex, src, re.MULTILINE | re.DOTALL)
     if not match:
         return None
@@ -140,6 +140,10 @@ def main(inputfile, outputfile):
     except FileNotFoundError:
         print("Could not read file '{}'".format(inputfile))
         sys.exit(-2)
+
+    if not out:
+        print("Could not parse file '{}'".format(inputfile))
+        sys.exit(-3)
 
     graph = Digraph(format='svg')
     graph.node_attr.update(style='filled', fillcolor='#e6e6e6', color='#a2a2a2')
