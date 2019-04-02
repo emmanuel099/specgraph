@@ -71,9 +71,6 @@ def parse_trace(trace, program):
             assert(len(targets) == 1)
             to = targets[0]
 
-        trace_entries.append({'t': len(trace_entries), 'from': label, 'to': to, 'obs': obs,
-                              'running_transactions': running_transactions})
-
         start_tids = set(extract_obs_info(obs, start_matcher, 'tid'))
         running_transactions = running_transactions.union(start_tids)
 
@@ -82,6 +79,9 @@ def parse_trace(trace, program):
 
         rollback_tids = set(extract_obs_info(obs, rollback_matcher, 'tid'))
         running_transactions = running_transactions.difference(rollback_tids)
+
+        trace_entries.append({'t': len(trace_entries), 'from': label, 'to': to, 'obs': obs,
+                              'running_transactions': running_transactions})
 
     return trace_entries
 
@@ -103,34 +103,6 @@ def parse(src):
         'program': program,
         'trace': trace,
     }
-
-
-def add_transaction_clusters(graph, trace):
-    def add_transaction_cluster(parent_cluster, tid, running_transactions, start):
-        with parent_cluster.subgraph(name='cluster_{}'.format(tid)) as cluster:
-            cluster.attr(color='#0087bd', penwidth='1.5', style='dotted')
-            cluster.attr(label='Transaction {}'.format(tid))
-
-            i = start
-            while i < len(trace):
-                entry = trace[i]
-                if len(entry['running_transactions']) > len(running_transactions): # nested transaction started
-                    nested_tid = next(iter(entry['running_transactions'].difference(running_transactions)))
-                    i = add_transaction_cluster(cluster, nested_tid, running_transactions=entry['running_transactions'], start=i)
-                elif len(entry['running_transactions']) < len(running_transactions): # transaction finished
-                    break
-                else:
-                    cluster.node(str(entry['from']))
-                i = i + 1
-            return i
-
-    i = 0
-    while i < len(trace):
-        entry = trace[i]
-        if entry['running_transactions']:
-            nested_tid = next(iter(entry['running_transactions']))
-            i = add_transaction_cluster(graph, nested_tid, running_transactions=entry['running_transactions'], start=i)
-        i = i + 1
 
 
 def main(inputfile, outputfile):
@@ -159,8 +131,9 @@ def main(inputfile, outputfile):
     trace = out['trace']
     for entry in trace:
         graph.edge(str(entry['from']), str(entry['to']), color='red', penwidth='2.5',
-                   label='@{}\n{}'.format(entry['t'], '\n'.join(entry['obs'])))
-    add_transaction_clusters(graph, trace)
+                   label='@{}\ns: [{}]\n{}'.format(entry['t'],
+                           ', '.join(map(str, entry['running_transactions'])),
+                           '\n'.join(entry['obs'])))
 
     graph.render(outputfile)
 
