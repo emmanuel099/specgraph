@@ -86,6 +86,38 @@ def parse_trace(trace, program):
     return trace_entries
 
 
+def parse_assigment_list(src):
+    regex = r"(?P<var>\w+)=(?P<value>\w+)"
+
+    ass = {}
+
+    matches = re.finditer(regex, src)
+    for match in matches:
+        ass[match.group('var')] = match.group('value')
+
+    return ass
+
+
+def parse_conf(src):
+    regex = r"^\s*(?P<key>\w+)\s*=\s*(?P<value>.+)\s*$"
+
+    conf = {}
+
+    matches = re.finditer(regex, src, re.MULTILINE)
+    for match in matches:
+        key = match.group('key')
+        value = match.group('value')
+
+        if key == 'i':
+            conf[key] = int(value)
+        elif key in []:
+            conf[key] = parse_assigment_list(value)
+        else:
+            conf[key] = value
+
+    return conf
+
+
 def parse(src):
     src = src.replace('<-', '←')
     src = src.replace('\\/', '∨')
@@ -98,10 +130,14 @@ def parse(src):
 
     program = parse_program(match.group('program'))
     trace = parse_trace(match.group('trace'), program)
+    init_conf = parse_conf(match.group('init_conf'))
+    final_conf = parse_conf(match.group('final_conf'))
 
     return {
         'program': program,
         'trace': trace,
+        'init_conf': init_conf,
+        'final_conf': final_conf,
     }
 
 
@@ -131,9 +167,21 @@ def main(inputfile, outputfile):
     trace = out['trace']
     for entry in trace:
         graph.edge(str(entry['from']), str(entry['to']), color='#f60000', fontcolor='#f60000', penwidth='3.5',
-                   label='@{}\ns: [{}]\n{}'.format(entry['t'],
-                           ', '.join(map(str, entry['running_transactions'])),
-                           '\n'.join(entry['obs'])))
+                   label='@{}\n{}'.format(entry['t'], '\n'.join(entry['obs'])))
+
+    # transactions
+    init_conf = out['init_conf']
+    final_conf = out['final_conf']
+    transaction_colors = ['#00934a', '#4363d8', '#f58231', '#fabebe', '#e6beff', '#800000', '#000075']
+    for tid in range(init_conf['i'], final_conf['i']):
+        for entry in trace:
+            if not tid in entry['running_transactions']:
+                continue
+            if entry['from'] == entry['to']:
+                continue
+            color = transaction_colors[tid % len(transaction_colors)]
+            graph.edge(str(entry['from']), str(entry['to']), color=color, fontcolor=color,
+                       penwidth='3.0', style='dashed', arrowhead='none', label=' t{}'.format(tid))
 
     graph.render(outputfile)
 
