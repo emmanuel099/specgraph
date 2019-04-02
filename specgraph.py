@@ -181,14 +181,14 @@ def main(inputfile, outputfile):
     # transactions
     init_conf = out['init_conf']
     final_conf = out['final_conf']
-    transaction_colors = ['#004c6d', '#006285', '#007a9d', '#0092b4', '#00abc9', '#00c4dd', '#00dfef', '#00f9ff']
+    transaction_colors = ['#00934a', '#4363d8', '#F96714', '#2A4B7C', '#CE5B78', '#800000', '#797B3A']
     for tid in range(init_conf['i'], final_conf['i']):
+        color = transaction_colors[tid % len(transaction_colors)]
         for entry in trace:
             if not tid in entry['running_transactions']:
                 continue
             if entry['from'] == entry['to']:
                 continue
-            color = transaction_colors[tid % len(transaction_colors)]
             graph.edge(str(entry['from']), str(entry['to']), color=color, fontcolor=color,
                        penwidth='3.0', style='dashed', arrowhead='none', label=' t{}'.format(tid))
 
