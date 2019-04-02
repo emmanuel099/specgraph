@@ -154,12 +154,14 @@ def main(inputfile, outputfile):
         sys.exit(-3)
 
     graph = Digraph(format='svg')
-    graph.node_attr.update(style='filled', fillcolor='#e6e6e6', color='#a2a2a2')
+    graph.node_attr.update(style='filled', fontcolor='#4a4a4a', fillcolor='#e6e6e6', color='#4a4a4a')
 
     # cfg
     program = out['program']
     for label, instr in program.items():
-        graph.node(str(label), label='{}: {}'.format(label, instr['text']))
+        is_end = len(instr['targets']) == 0
+        graph.node(str(label), label='{}: {}'.format(label, instr['text']),
+                   shape='doubleoctagon' if is_end else 'rect')
         for target in instr['targets']:
             graph.edge(str(label), str(target), color='#a2a2a2', penwidth='1.5')
 
