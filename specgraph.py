@@ -207,7 +207,7 @@ if __name__ == '__main__':
 
         sys.exit(-1)
 
-    inputfile = None
+    inputfile = sys.stdin.fileno()
     outputfile = None
 
     try:
@@ -222,8 +222,6 @@ if __name__ == '__main__':
         elif opt in ("-o", "--out"):
             outputfile = arg
 
-    if not inputfile:
-        print_help_and_exit()
     if not outputfile:
         print_help_and_exit()
 

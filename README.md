@@ -17,6 +17,18 @@ Then start `specgraph.py` with `loadsym.txt`:
 python specgraph.py -i loadsym.txt -o loadsym
 ```
 
+Or run Spectector and redirect the output to `specgraph.py` directly:
+
+```
+spectector p_2_5.muasm -a reach1 -c 'c([], [pc=0])' | python specgraph.py -o p_2_5
+```
+
 ## Result
+
+### p_2_5
+
+![loadsym](doc/p_2_5.svg)
+
+### loadsym
 
 ![loadsym](doc/loadsym.svg)
