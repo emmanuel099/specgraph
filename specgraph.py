@@ -46,20 +46,27 @@ def parse_trace(trace, program):
     commit_matcher = re.compile(r"commit\((?P<tid>\d+)\)")
     rollback_matcher = re.compile(r"rollback\((?P<tid>\d+)\)")
 
+    combined_trace_lines = []
+    for label, obs_str in zip(trace_parts[:-1:2], trace_parts[1::2]):
+        label = int(label)
+        obs = [o.strip() for o in obs_str.split('\n')]
+        obs = list(filter(None, obs)) # drop empty obs
+        if len(combined_trace_lines) > 0 and combined_trace_lines[-1][0] == label:
+            combined_trace_lines[-1] = (label, combined_trace_lines[-1][1] + obs) # append obs to last line
+        else:
+            combined_trace_lines.append((label, obs))
+
     trace_entries = []
 
     running_transactions = set()
 
-    for label, obs_str in zip(trace_parts[:-1:2], trace_parts[1::2]):
-        obs = [o.strip() for o in obs_str.split('\n')]
-        label = int(label)
-
-        targets = program[label]['targets']
-
+    for label, obs in combined_trace_lines:
         def filter_obs(obs, matcher):
             return [ob for ob in obs if matcher.match(ob)]
         def extract_obs_info(obs, matcher, group):
             return [int(matcher.match(ob).group(group)) for ob in filter_obs(obs, matcher)]
+
+        targets = program[label]['targets']
 
         pc_targets = extract_obs_info(obs, pc_matcher, 'target')
         if pc_targets:
