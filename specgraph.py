@@ -130,7 +130,7 @@ def main(inputfile, outputfile):
     # trace
     trace = out['trace']
     for entry in trace:
-        graph.edge(str(entry['from']), str(entry['to']), color='red', penwidth='2.5',
+        graph.edge(str(entry['from']), str(entry['to']), color='#f60000', fontcolor='#f60000', penwidth='2.5',
                    label='@{}\ns: [{}]\n{}'.format(entry['t'],
                            ', '.join(map(str, entry['running_transactions'])),
                            '\n'.join(entry['obs'])))
