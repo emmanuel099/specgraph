@@ -19,4 +19,4 @@ python specgraph.py -i loadsym.txt -o loadsym
 
 ## Result
 
-![loadsym](doc/example-graph.svg)
+![loadsym](doc/loadsym.svg)
