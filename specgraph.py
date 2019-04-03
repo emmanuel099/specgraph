@@ -36,10 +36,9 @@ def parse_program(src):
     return instructions
 
 
-def parse_trace(trace, program):
+def parse_trace(src, program):
     label_regex = r"(?P<label>\d+):\s*"
-    trace_parts = re.split(label_regex, trace)
-    trace_parts.pop(0)
+    trace_lines = re.split(label_regex, src)
 
     pc_matcher = re.compile(r"pc\((?P<target>\d+)\)")
     start_matcher = re.compile(r"start\((?P<tid>\d+)\)")
@@ -47,7 +46,7 @@ def parse_trace(trace, program):
     rollback_matcher = re.compile(r"rollback\((?P<tid>\d+)\)")
 
     combined_trace_lines = []
-    for label, obs_str in zip(trace_parts[:-1:2], trace_parts[1::2]):
+    for label, obs_str in zip(trace_lines[1::2], trace_lines[2::2]):
         label = int(label)
         obs = [o.strip() for o in obs_str.split('\n')]
         obs = list(filter(None, obs)) # drop empty obs
@@ -56,7 +55,7 @@ def parse_trace(trace, program):
         else:
             combined_trace_lines.append((label, obs))
 
-    trace_entries = []
+    trace = []
 
     running_transactions = set()
 
@@ -87,10 +86,10 @@ def parse_trace(trace, program):
         rollback_tids = set(extract_obs_info(obs, rollback_matcher, 'tid'))
         running_transactions = running_transactions.difference(rollback_tids)
 
-        trace_entries.append({'t': len(trace_entries), 'from': label, 'to': to, 'obs': obs,
-                              'running_transactions': running_transactions})
+        trace.append({'t': len(trace), 'from': label, 'to': to, 'obs': obs,
+                      'running_transactions': running_transactions})
 
-    return trace_entries
+    return trace
 
 
 def parse_assigment_list(src):
@@ -130,7 +129,12 @@ def parse(src):
     src = src.replace('\\/', '∨')
     src = src.replace('/\\', '∧')
 
-    regex = r"program:\n(?P<program>.*).*Assignments:\n\s*\[(?P<assignments>.*)\].*initial conf:\n(?P<init_conf>.*).*trace:\n(?P<trace>.*).*final conf:\n(?P<final_conf>.*)"
+    regex = r"program:\n(?P<program>.*).*"\
+            r"Assignments:\n\s*\[(?P<assignments>.*)\].*"\
+            r"initial conf:\n(?P<init_conf>.*).*"\
+            r"trace:\n(?P<trace>.*).*"\
+            r"final conf:\n(?P<final_conf>.*)"
+
     match = re.search(regex, src, re.MULTILINE | re.DOTALL)
     if not match:
         return None
@@ -151,12 +155,12 @@ def parse(src):
 def main(inputfile, outputfile):
     try:
         with open(inputfile, 'r') as f:
-            out = parse(f.read())
+            spectector_out = parse(f.read())
     except FileNotFoundError:
         print("Could not read file '{}'".format(inputfile))
         sys.exit(-2)
 
-    if not out:
+    if not spectector_out:
         print("Could not parse file '{}'".format(inputfile))
         sys.exit(-3)
 
@@ -164,7 +168,7 @@ def main(inputfile, outputfile):
     graph.node_attr.update(style='filled', fontcolor='#4a4a4a', fillcolor='#e6e6e6', color='#4a4a4a')
 
     # cfg
-    program = out['program']
+    program = spectector_out['program']
     for label, instr in program.items():
         is_end = len(instr['targets']) == 0
         graph.node(str(label), label='{}: {}'.format(label, instr['text']),
@@ -173,7 +177,7 @@ def main(inputfile, outputfile):
             graph.edge(str(label), str(target), color='#a2a2a2', penwidth='1.5')
 
     # trace
-    trace = out['trace']
+    trace = spectector_out['trace']
     for entry in trace:
         graph.edge(str(entry['from']), str(entry['to']), color='#f60000', fontcolor='#f60000', penwidth='3.5',
                    label='@{}\n{}'.format(entry['t'], '\n'.join(entry['obs'])))
@@ -192,9 +196,9 @@ def main(inputfile, outputfile):
 if __name__ == '__main__':
     def print_help_and_exit():
         print('Tool for visualizing Spectector traces.')
-        print('\nUSAGE:\n  {} -i <inputfile> -o <outputfile>'.format(sys.argv[0]))
+        print('\nUSAGE:\n  {} [-i <inputfile>] -o <outputfile>'.format(sys.argv[0]))
         options = [
-            '-i, --in\tInput text-file containing the output of Spectector',
+            '-i, --in\tInput text-file containing the output of Spectector (will read from stdin if not set)',
             '-o, --out\tOutput file containing the graph (will create SVG- and DOT-files)',
         ]
         print('\nOPTIONS:\n  ' + '\n  '.join(options))
