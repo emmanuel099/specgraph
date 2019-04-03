@@ -179,16 +179,10 @@ def main(inputfile, outputfile):
                    label='@{}\n{}'.format(entry['t'], '\n'.join(entry['obs'])))
 
     # transactions
-    init_conf = out['init_conf']
-    final_conf = out['final_conf']
     transaction_colors = ['#00934a', '#4363d8', '#F96714', '#2A4B7C', '#CE5B78', '#800000', '#797B3A']
-    for tid in range(init_conf['i'], final_conf['i']):
-        color = transaction_colors[tid % len(transaction_colors)]
-        for entry in trace:
-            if not tid in entry['running_transactions']:
-                continue
-            if entry['from'] == entry['to']:
-                continue
+    for entry in trace:
+        for tid in entry['running_transactions']:
+            color = transaction_colors[tid % len(transaction_colors)]
             graph.edge(str(entry['from']), str(entry['to']), color=color, fontcolor=color,
                        penwidth='3.0', style='dashed', arrowhead='none', label=' t{}'.format(tid))
 
