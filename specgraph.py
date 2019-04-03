@@ -117,7 +117,7 @@ def parse_conf(src):
 
         if key == 'i':
             conf[key] = int(value)
-        elif key in []:
+        elif key in ['m', 'a']:
             conf[key] = parse_assigment_list(value)
         else:
             conf[key] = value
