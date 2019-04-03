@@ -188,7 +188,7 @@ def main(inputfile, outputfile):
         for tid in entry['running_transactions']:
             color = transaction_colors[tid % len(transaction_colors)]
             graph.edge(str(entry['from']), str(entry['to']), color=color, fontcolor=color,
-                       penwidth='3.0', style='dashed', arrowhead='none', label=' t{}'.format(tid))
+                       penwidth='3.0', style='dashed', arrowhead='none', label='t{}'.format(tid))
 
     graph.render(outputfile)
 
