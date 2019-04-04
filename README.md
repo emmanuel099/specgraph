@@ -46,3 +46,21 @@ Gives the following graph:
 * Gray edges show the control flow of the program.
 * Red edges depict the trace found by Spectector. Each edge is labeled with the logical timestamp (`@{number}`) as well as the observations of the executed instruction.
 * Dashed edges visualize the uncommitted speculative transactions along the trace.
+
+Adding a speculative barrier (`spbarr` instruction) to the previous example fixes the leak.
+
+```
+    x<-y>=size
+    beqz x,Within
+    jmp End
+Within:
+    spbarr
+    load z,A+y
+    z<-z*512
+    load w,B+z
+End:
+```
+
+The hardened example gives the following graph:
+
+![p_1_spectre_v1_spbarr](doc/p_1_spectre_v1_spbarr.svg)
