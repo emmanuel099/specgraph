@@ -192,6 +192,18 @@ def main(inputfile, outputfile):
             graph.edge(str(entry['from']), str(entry['to']), color=color, fontcolor=color,
                        penwidth='3.0', style='dashed', arrowhead='none', label='t{}'.format(tid))
 
+    # configs
+    def annotate_node_with_config(node_id, conf, draw_on_top=False):
+        conf_node_id = 'conf_{}'.format(node_id)
+        graph.node(conf_node_id, shape='note', style='solid',
+                   label='mem: {}\nreg: {}'.format(str(conf['m']), str(conf['a'])))
+        f = conf_node_id if draw_on_top else node_id
+        t = node_id if draw_on_top else conf_node_id
+        graph.edge(f, t, color='grey', penwidth='2.0', style='dotted', arrowhead='none')
+
+    annotate_node_with_config('0', spectector_out['init_conf'], draw_on_top=True)
+    annotate_node_with_config(str(len(program)-1), spectector_out['final_conf'])
+
     graph.render(outputfile)
 
 
