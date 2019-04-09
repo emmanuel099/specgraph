@@ -65,7 +65,7 @@
 <path fill="none" stroke="#f60000" stroke-width="3.5" d="M196.148,-550.6455C198.7336,-531.0941 203.7846,-499.3909 212,-473 212.8576,-470.245 213.8671,-467.4203 214.9551,-464.6238"/>
 <polygon fill="#f60000" stroke="#f60000" stroke-width="3.5" points="218.198,-465.9411 218.85,-455.3664 211.7458,-463.2264 218.198,-465.9411"/>
 <text text-anchor="middle" x="258.5" y="-521.8" font-family="Times,serif" font-size="14.00" fill="#f60000">@1</text>
-<text text-anchor="middle" x="258.5" y="-506.8" font-family="Times,serif" font-size="14.00" fill="#f60000"># cond(C=0)</text>
+<text text-anchor="middle" x="258.5" y="-506.8" font-family="Times,serif" font-size="14.00" fill="#f60000"># cond(C≠0)</text>
 <text text-anchor="middle" x="258.5" y="-491.8" font-family="Times,serif" font-size="14.00" fill="#f60000">start(0)</text>
 <text text-anchor="middle" x="258.5" y="-476.8" font-family="Times,serif" font-size="14.00" fill="#f60000">pc(3)</text>
 </g>
