@@ -130,6 +130,7 @@ def parse(src):
     src = src.replace('/\\', '∧')
     src = src.replace('>=', '≥')
     src = src.replace('<=', '≤')
+    src = src.replace('\=', '≠')
 
     regex = r"program:\n(?P<program>.*).*"\
             r"Assignments:\n\s*\[(?P<assignments>.*)\].*"\
