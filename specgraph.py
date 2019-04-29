@@ -63,7 +63,8 @@ def parse_trace(src, program):
         def filter_obs(obs, matcher):
             return [ob for ob in obs if matcher.match(ob)]
         def extract_obs_info(obs, matcher, group):
-            return [int(matcher.match(ob).group(group)) for ob in filter_obs(obs, matcher)]
+            res = [int(matcher.match(ob).group(group)) for ob in filter_obs(obs, matcher)]
+            return list_without_duplicates(res)
 
         targets = program[label]['targets']
 
@@ -153,6 +154,14 @@ def parse(src):
         'init_conf': init_conf,
         'final_conf': final_conf,
     }
+
+
+def list_without_duplicates(elems):
+    unique_elems = []
+    for elem in elems:
+        if elem not in unique_elems:
+            unique_elems.append(elem)
+    return unique_elems
 
 
 def main(inputfile, outputfile):
