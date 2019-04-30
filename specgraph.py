@@ -164,7 +164,7 @@ def list_without_duplicates(elems):
     return unique_elems
 
 
-def main(inputfile, outputfile):
+def main(inputfile, outputfile, show_inital_final_config):
     try:
         with open(inputfile, 'r') as f:
             spectector_out = parse(f.read())
@@ -211,8 +211,11 @@ def main(inputfile, outputfile):
         t = node_id if draw_on_top else conf_node_id
         graph.edge(f, t, color='grey', penwidth='2.0', style='dotted', arrowhead='none')
 
-    annotate_node_with_config('0', spectector_out['init_conf'], draw_on_top=True)
-    annotate_node_with_config(str(len(program)-1), spectector_out['final_conf'])
+    if show_inital_final_config:
+        annotate_node_with_config(
+            '0', spectector_out['init_conf'], draw_on_top=True)
+        annotate_node_with_config(
+            str(len(program)-1), spectector_out['final_conf'])
 
     graph.render(outputfile)
 
@@ -224,6 +227,7 @@ if __name__ == '__main__':
         options = [
             '-i, --in\tInput text-file containing the output of Spectector (will read from stdin if not set)',
             '-o, --out\tOutput file containing the graph (will create SVG- and DOT-files)',
+            '--no-cfg\tDo not show initial or final configuration',
         ]
         print('\nOPTIONS:\n  ' + '\n  '.join(options))
 
@@ -231,9 +235,11 @@ if __name__ == '__main__':
 
     inputfile = sys.stdin.fileno()
     outputfile = None
+    show_inital_final_config = True
 
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "hi:o:", ["in=","out="])
+        opts, args = getopt.getopt(sys.argv[1:], "hi:o:", [
+                                   "in=", "out=", "no-cfg"])
     except getopt.GetoptError:
         print_help_and_exit()
     for opt, arg in opts:
@@ -243,8 +249,10 @@ if __name__ == '__main__':
             inputfile = arg
         elif opt in ("-o", "--out"):
             outputfile = arg
+        elif opt == "--no-cfg":
+            show_inital_final_config = False
 
     if not outputfile:
         print_help_and_exit()
 
-    main(inputfile, outputfile)
+    main(inputfile, outputfile, show_inital_final_config)
