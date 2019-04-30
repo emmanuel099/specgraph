@@ -49,9 +49,11 @@ def parse_trace(src, program):
     for label, obs_str in zip(trace_lines[1::2], trace_lines[2::2]):
         label = int(label)
         obs = [o.strip() for o in obs_str.split('\n')]
-        obs = list(filter(None, obs)) # drop empty obs
+        obs = list(filter(None, obs))  # drop empty obs
         if len(combined_trace_lines) > 0 and combined_trace_lines[-1][0] == label:
-            combined_trace_lines[-1] = (label, combined_trace_lines[-1][1] + obs) # append obs to last line
+            # append obs to last line
+            combined_trace_lines[-1] = (label,
+                                        combined_trace_lines[-1][1] + obs)
         else:
             combined_trace_lines.append((label, obs))
 
@@ -62,8 +64,10 @@ def parse_trace(src, program):
     for label, obs in combined_trace_lines:
         def filter_obs(obs, matcher):
             return [ob for ob in obs if matcher.match(ob)]
+
         def extract_obs_info(obs, matcher, group):
-            res = [int(matcher.match(ob).group(group)) for ob in filter_obs(obs, matcher)]
+            res = [int(matcher.match(ob).group(group))
+                   for ob in filter_obs(obs, matcher)]
             return list_without_duplicates(res)
 
         targets = program[label]['targets']
@@ -72,7 +76,7 @@ def parse_trace(src, program):
         if pc_targets:
             assert(len(pc_targets) == 1)
             to = pc_targets[0]
-        elif len(targets) == 0: # end
+        elif len(targets) == 0:  # end
             to = label
         else:
             assert(len(targets) == 1)
@@ -177,7 +181,8 @@ def main(inputfile, outputfile, show_inital_final_config):
         sys.exit(-3)
 
     graph = Digraph(format='svg')
-    graph.node_attr.update(style='filled', fontcolor='#4a4a4a', fillcolor='#e6e6e6', color='#4a4a4a')
+    graph.node_attr.update(style='filled', fontcolor='#4a4a4a',
+                           fillcolor='#e6e6e6', color='#4a4a4a')
 
     # cfg
     program = spectector_out['program']
@@ -186,7 +191,8 @@ def main(inputfile, outputfile, show_inital_final_config):
         graph.node(str(label), label='{}: {}'.format(label, instr['text']),
                    shape='doubleoctagon' if is_end else 'rect')
         for target in instr['targets']:
-            graph.edge(str(label), str(target), color='#a2a2a2', penwidth='1.5')
+            graph.edge(str(label), str(target),
+                       color='#a2a2a2', penwidth='1.5')
 
     # trace
     trace = spectector_out['trace']
@@ -195,7 +201,8 @@ def main(inputfile, outputfile, show_inital_final_config):
                    label='@{}\n{}'.format(entry['t'], '\n'.join(entry['obs'])))
 
     # transactions
-    transaction_colors = ['#00934a', '#4363d8', '#F96714', '#2A4B7C', '#CE5B78', '#800000', '#797B3A']
+    transaction_colors = ['#00934a', '#4363d8', '#F96714',
+                          '#2A4B7C', '#CE5B78', '#800000', '#797B3A']
     for entry in trace:
         for tid in entry['running_transactions']:
             color = transaction_colors[tid % len(transaction_colors)]
@@ -209,7 +216,8 @@ def main(inputfile, outputfile, show_inital_final_config):
                    label='mem: {}\nreg: {}'.format(str(conf['m']), str(conf['a'])))
         f = conf_node_id if draw_on_top else node_id
         t = node_id if draw_on_top else conf_node_id
-        graph.edge(f, t, color='grey', penwidth='2.0', style='dotted', arrowhead='none')
+        graph.edge(f, t, color='grey', penwidth='2.0',
+                   style='dotted', arrowhead='none')
 
     if show_inital_final_config:
         annotate_node_with_config(
@@ -223,7 +231,8 @@ def main(inputfile, outputfile, show_inital_final_config):
 if __name__ == '__main__':
     def print_help_and_exit():
         print('Tool for visualizing Spectector traces.')
-        print('\nUSAGE:\n  {} [-i <inputfile>] -o <outputfile>'.format(sys.argv[0]))
+        print(
+            '\nUSAGE:\n  {} [-i <inputfile>] -o <outputfile>'.format(sys.argv[0]))
         options = [
             '-i, --in\tInput text-file containing the output of Spectector (will read from stdin if not set)',
             '-o, --out\tOutput file containing the graph (will create SVG- and DOT-files)',
